@@ -1,10 +1,17 @@
 name: Augeas CI
 
 on:
+  schedule:
+    - cron: "0 0 * * *" # Every day at 00:00
   push:
     branches: [main]
   pull_request:
     branches: "*"
+    paths-ignore:
+      - "*.md"
+      - LICENCE
+      - .git*
+      - .editorconfig
 
 jobs:
   specs:
@@ -14,7 +21,11 @@ jobs:
         shard_file:
           - shard.yml
         crystal_version:
+          - 1.1.0
           - 1.1.1
+        include:
+          - crystal: nightly
+            stable: false
     runs-on: ubuntu-latest
     steps:
       - name: Install Crystal
