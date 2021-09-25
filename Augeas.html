@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="augeas">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="augeas">
+  <title>Augeas - augeas main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          augeas
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="augeas/Augeas" data-name="augeas">
+      <a href="Augeas.html">Augeas</a>
+      
+        <ul>
+  
+  <li class=" " data-id="augeas/Augeas/File" data-name="augeas::file">
+      <a href="Augeas/File.html">File</a>
+      
+    </li>
+  
+  <li class=" " data-id="augeas/Augeas/LensNotFound" data-name="augeas::lensnotfound">
+      <a href="Augeas/LensNotFound.html">LensNotFound</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Augeas
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="Augeas.html">Augeas</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>This is the main Augeas class, the entrypoint to all Augeas operations</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L4" target="_blank">
+        augeas.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(root:String,loadpath:String?=nil,flags:UInt32=0)-class-method" class="signature"><strong>.new</strong>(root : String, loadpath : String? = <span class="n">nil</span>, flags : UInt32 = <span class="n">0</span>)</a>
+        
+          <div class="summary"><p>Initiale the class specifying your root, the lens loadpath and any flags Right now we are only forwaring the flags to LibAugeas, maybe in the future we can handle it more the <em>crystal way™</em></p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#check_aug_error-instance-method" class="signature"><strong>#check_aug_error</strong></a>
+        
+          <div class="summary"><p>Check error on augeas C struct</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#finalize-instance-method" class="signature"><strong>#finalize</strong></a>
+        
+          <div class="summary"><p>Close Augeas C Struct (to free everything related to it)</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#flags:UInt32-instance-method" class="signature"><strong>#flags</strong> : UInt32</a>
+        
+          <div class="summary"><p>Augeas control flags specified on the <code><a href="Augeas.html#new(root:String,loadpath:String?=nil,flags:UInt32=0)-class-method">.new</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#load_file(path:String)-instance-method" class="signature"><strong>#load_file</strong>(path : String)</a>
+        
+          <div class="summary"><p>Load a file into the Augeas tree</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#loadpath:String?-instance-method" class="signature"><strong>#loadpath</strong> : String?</a>
+        
+          <div class="summary"><p>Load path for augeas lens specified on the `.new</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#root:String-instance-method" class="signature"><strong>#root</strong> : String</a>
+        
+          <div class="summary"><p>Root specified on the <code><a href="Augeas.html#new(root:String,loadpath:String?=nil,flags:UInt32=0)-class-method">.new</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#save-instance-method" class="signature"><strong>#save</strong></a>
+        
+          <div class="summary"><p>Save all changes in the augeas tree to the respective files ps: Only modified files are written</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_unsafe:Pointer(LibAugeas::Augeas)-instance-method" class="signature"><strong>#to_unsafe</strong> : Pointer(LibAugeas::Augeas)</a>
+        
+          <div class="summary"><p>Pointer to C Struct</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(root:String,loadpath:String?=nil,flags:UInt32=0)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(root : String, loadpath : String? = <span class="n">nil</span>, flags : UInt32 = <span class="n">0</span>)
+
+        <a class="method-permalink" href="#new(root:String,loadpath:String?=nil,flags:UInt32=0)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initiale the class specifying your root, the lens loadpath and any flags
+Right now we are only forwaring the flags to LibAugeas, maybe in the future
+we can handle it more the <em>crystal way™</em></p>
+
+<pre><code class="language-crystal"><span class="t">Augeas</span>.<span class="k">new</span>(root: <span class="s">&quot;/path/to/root&quot;</span>, loadpath: <span class="s">&quot;/path/to/leans&quot;</span>, flags: <span class="n">2</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="check_aug_error-instance-method">
+      <div class="signature">
+        
+        def <strong>check_aug_error</strong>
+
+        <a class="method-permalink" href="#check_aug_error-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Check error on augeas C struct</p>
+
+<p>The main idea is to keep here all possible errors that can happen</p>
+
+<p>Initially check augeas for an error, if not returns true, otherwise
+Fetch the <code>error_message</code>, <code>error_minor_message</code> and <code>error_details</code></p>
+
+<p>After that checks the <code>error_message</code> against known values, if any is found
+method raises an an exception passing error details as its message</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L58" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="finalize-instance-method">
+      <div class="signature">
+        
+        def <strong>finalize</strong>
+
+        <a class="method-permalink" href="#finalize-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Close Augeas C Struct (to free everything related to it)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L83" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="flags:UInt32-instance-method">
+      <div class="signature">
+        
+        def <strong>flags</strong> : UInt32
+
+        <a class="method-permalink" href="#flags:UInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Augeas control flags specified on the <code><a href="Augeas.html#new(root:String,loadpath:String?=nil,flags:UInt32=0)-class-method">.new</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="load_file(path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>load_file</strong>(path : String)
+
+        <a class="method-permalink" href="#load_file(path:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Load a file into the Augeas tree</p>
+
+<pre><code class="language-crystal">load_file(<span class="s">&quot;/path/to/my-config-file&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="loadpath:String?-instance-method">
+      <div class="signature">
+        
+        def <strong>loadpath</strong> : String?
+
+        <a class="method-permalink" href="#loadpath:String?-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Load path for augeas lens specified on the `.new</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="root:String-instance-method">
+      <div class="signature">
+        
+        def <strong>root</strong> : String
+
+        <a class="method-permalink" href="#root:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Root specified on the <code><a href="Augeas.html#new(root:String,loadpath:String?=nil,flags:UInt32=0)-class-method">.new</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="save-instance-method">
+      <div class="signature">
+        
+        def <strong>save</strong>
+
+        <a class="method-permalink" href="#save-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Save all changes in the augeas tree to the respective files
+ps: Only modified files are written</p>
+
+<p>tip: Do not forget to call this method after performing changes</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L45" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_unsafe:Pointer(LibAugeas::Augeas)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_unsafe</strong> : Pointer(LibAugeas::Augeas)
+
+        <a class="method-permalink" href="#to_unsafe:Pointer(LibAugeas::Augeas)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Pointer to C Struct</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas.cr#L88" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="augeas">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="augeas">
+  <title>augeas main</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          augeas
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="augeas/Augeas" data-name="augeas">
+      <a href="Augeas.html">Augeas</a>
+      
+        <ul>
+  
+  <li class=" " data-id="augeas/Augeas/File" data-name="augeas::file">
+      <a href="Augeas/File.html">File</a>
+      
+    </li>
+  
+  <li class=" " data-id="augeas/Augeas/LensNotFound" data-name="augeas::lensnotfound">
+      <a href="Augeas/LensNotFound.html">LensNotFound</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="augeas" class="anchor" href="#augeas">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>augeas</h1>
+
+<p>Crystal C Bindings for <a href="https://augeas.net/">Augeas</a></p>
+
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+
+<h3><a id="pre-requisites" class="anchor" href="#pre-requisites">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Pre-Requisites</h3>
+
+<p>Before adding this shard, need to install the libaugeas.</p>
+
+<p>On Mac <code>brew install augeas</code></p>
+
+<p>On Linux <code>apt-get install libaugeas-dev</code></p>
+
+<h3><a id="crystal" class="anchor" href="#crystal">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Crystal</h3>
+
+<ol><li>Add the dependency to your <code>shard.yml</code>:</li></ol>
+
+<pre><code class="language-yaml">dependencies:
+  augeas:
+    github: fernandes/augeas</code></pre>
+
+<ol><li>Run <code>shards install</code></li></ol>
+
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;augeas&quot;</span></code></pre>
+
+<h3><a id="initializing-augeas" class="anchor" href="#initializing-augeas">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Initializing Augeas</h3>
+
+<p>Initial step is always setup Augeas to your root path:</p>
+
+<pre><code class="language-crystal">augeas <span class="o">=</span> <span class="t">Augeas</span>.<span class="k">new</span>(root: <span class="s">&quot;/path/to/root&quot;</span>)</code></pre>
+
+<h3><a id="getting-a-value" class="anchor" href="#getting-a-value">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Getting a Value</h3>
+
+<p>Consider getting value for a postgresql conf setting:</p>
+
+<pre><code class="language-crystal">augeas_file <span class="o">=</span> augeas.load_file(<span class="s">&quot;/var/lib/pgsql/data/postgresql.conf&quot;</span>)
+augeas_file.get(<span class="s">&quot;data_directory&quot;</span>)
+<span class="c"># =&gt; &quot;/var/lib/postgresql/8.4/main&quot;</span></code></pre>
+
+<h3><a id="setting-a-value" class="anchor" href="#setting-a-value">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Setting a value</h3>
+
+<pre><code class="language-crystal">augeas_file <span class="o">=</span> augeas.load_file(<span class="s">&quot;/var/lib/pgsql/data/postgresql.conf&quot;</span>)
+augeas_file.set(<span class="s">&quot;data_directory&quot;</span>, <span class="s">&quot;/my/new/path/to/postgresql/8.4/main&quot;</span>)
+<span class="c"># =&gt; true</span>
+augeas.save <span class="c"># this is a important step, do not forget to save</span></code></pre>
+
+<h2><a id="development" class="anchor" href="#development">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Development</h2>
+
+<p>Install the libraries on your local environment, write a spec, make it pass and :shipit:</p>
+
+<p><code>LibAugeas</code> has all the methods mapped, the comments there are from the <a href="https://github.com/hercules-team/augeas/blob/4ceb8403039f57df9ecbcdeb08da7a356bd236fc/src/augeas.h">C header</a>.</p>
+
+<p>Augeas needs to pass a pointer to <code><a href="Augeas.html">Augeas</a></code> on every method, that's why we pass the <code><a href="Augeas.html">Augeas</a></code> crystal object to <code><a href="Augeas/File.html">Augeas::File</a></code>, so we can encapsulate the logic to manipulate a file inside it. We have the penalty on needing to call <code>Augeas#save</code>, but this is something we can abstract in the future with kind of DSL/block.</p>
+
+<p>This library is on early stages, the next steps are (to be developed as needed):</p>
+
+<ul><li>[ ] Better error handling</li><ul><li>[ ] Specially when there are more than 1 node</li></ul><li>[ ] Support augeas operations</li><ul><li>[ ] Single Node Operations (<code>aug_rm</code>, <code>aug_mv</code>, <code>aug_cp</code>)</li><li>[ ] Deal with matches (<code>aug_match</code>)</li><li>[ ] Support <code>aug_ns_*</code> functions</li></ul></ul>
+
+<p>About error handling, as we need to check the error messages on <code><a href="Augeas.html">Augeas</a></code>, the idea is to centralize all the error message / exceptions in one place, for now keeping in one method works, maybe a refactor to a new file can make sense.</p>
+
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+
+<ol><li>Fork it (&lt;https://github.com/fernandes/augeas/fork>)</li><li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li><li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li><li>Push to the branch (<code>git push origin my-new-feature</code>)</li><li>Create a new Pull Request</li></ol>
+
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+
+<ul><li><a href="https://github.com/fernandes">Celso Fernandes</a></li></ul>
+</div>
+</body>
+</html>

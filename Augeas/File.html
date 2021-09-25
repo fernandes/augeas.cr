@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.0.0">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="augeas">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="augeas">
+  <title>Augeas::File - augeas main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          augeas
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="augeas/Augeas" data-name="augeas">
+      <a href="../Augeas.html">Augeas</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="augeas/Augeas/File" data-name="augeas::file">
+      <a href="../Augeas/File.html">File</a>
+      
+    </li>
+  
+  <li class=" " data-id="augeas/Augeas/LensNotFound" data-name="augeas::lensnotfound">
+      <a href="../Augeas/LensNotFound.html">LensNotFound</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Augeas::File
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Augeas/File.html">Augeas::File</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Usually the full path to the config file, needs to be speficied, when
+getting and setting values. Using this file, this is not needed.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas/file.cr#L5" target="_blank">
+        augeas/file.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(augeas:Augeas,path:String)-class-method" class="signature"><strong>.new</strong>(augeas : Augeas, path : String)</a>
+        
+          <div class="summary"><p>Initiale Augeas::File abstraction, <code>@augeas</code> is needed to perform augeas operations on it, and the <code>@path</code> is the full path to the config file.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#get(key)-instance-method" class="signature"><strong>#get</strong>(key)</a>
+        
+          <div class="summary"><p>Get a settings value from the config file</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#lens_name-instance-method" class="signature"><strong>#lens_name</strong></a>
+        
+          <div class="summary"><p>Return the lens name for this file</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#path:String-instance-method" class="signature"><strong>#path</strong> : String</a>
+        
+          <div class="summary"><p>Path to the config file, specified in the <code><a href="../Augeas/File.html#new(augeas:Augeas,path:String)-class-method">.new</a></code> method</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set(key,value)-instance-method" class="signature"><strong>#set</strong>(key, value)</a>
+        
+          <div class="summary"><p>Set a settings value on the config file As Augeas keeps the modifications in memory, don't forget to call <code><a href="../Augeas.html#save-instance-method">Augeas#save</a></code> after making changes</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(augeas:Augeas,path:String)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(augeas : <a href="../Augeas.html">Augeas</a>, path : String)
+
+        <a class="method-permalink" href="#new(augeas:Augeas,path:String)-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initiale Augeas::File abstraction, <code>@augeas</code> is needed to perform
+augeas operations on it, and the <code>@path</code> is the full path to the
+config file.</p>
+
+<pre><code class="language-crystal">augeas <span class="o">=</span> <span class="t">Augeas</span>.<span class="k">new</span>(root: <span class="s">&quot;/path/to&quot;</span>)
+augeas_file <span class="o">=</span> <span class="t">Augeas</span><span class="t">::</span><span class="t">File</span>.<span class="k">new</span>(augeas: augeas, path: <span class="s">&quot;/path/to/config-file&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas/file.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="get(key)-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong>(key)
+
+        <a class="method-permalink" href="#get(key)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get a settings value from the config file</p>
+
+<p>Let take postgresql as example, consider we have a config file like this
+   data_directory = '/var/lib/postgresql/8.4/main'          # use data in another directory</p>
+
+<p>After instantiating the class, get can be used as:</p>
+
+<pre><code class="language-crystal">get(<span class="s">&quot;data_directory&quot;</span>)
+<span class="c"># =&gt; &quot;/var/lib/postgresql/8.4/main&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas/file.cr#L31" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="lens_name-instance-method">
+      <div class="signature">
+        
+        def <strong>lens_name</strong>
+
+        <a class="method-permalink" href="#lens_name-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Return the lens name for this file</p>
+
+<p>When Augeas loads a file, it associates a lens with it, so
+this method looks up and returns the lens name</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas/file.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="path:String-instance-method">
+      <div class="signature">
+        
+        def <strong>path</strong> : String
+
+        <a class="method-permalink" href="#path:String-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Path to the config file, specified in the <code><a href="../Augeas/File.html#new(augeas:Augeas,path:String)-class-method">.new</a></code> method</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas/file.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set(key,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set</strong>(key, value)
+
+        <a class="method-permalink" href="#set(key,value)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set a settings value on the config file
+As Augeas keeps the modifications in memory, don't
+forget to call <code><a href="../Augeas.html#save-instance-method">Augeas#save</a></code> after making changes</p>
+
+<pre><code class="language-crystal">set(<span class="s">&quot;data_directory&quot;</span>, <span class="s">&quot;/path/to/data_directory&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/fernandes/augeas.cr/blob/c1fab720395e87dc2e4a1ff81e5788422086d421/src/augeas/file.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
